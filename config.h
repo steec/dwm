@@ -17,10 +17,10 @@ static const Bool topbar            = True;     /* False means bottom bar */
 #define NUMCOLORS											4
 static const char colors[NUMCOLORS][ColLast][8] = {
 	//border	foreground	background
-	{ "#000000", "#888888", "#222222" },	//normal
-	{ "#777777", "#95e454", "#222222" },	//highlight
-	{ "#222222", "#e5786d", "#222222" },	//urgent
-	{ "#222222", "#87afff", "#222222" },	//blue foreground
+	{ "#121212", "#888888", "#222222" },	//normal
+	{ "#cccccc", "#95e454", "#222222" },	//highlight
+	{ "#ff2222", "#e5786d", "#222222" },	//urgent
+	{ "#121212", "#87afff", "#222222" },	//blue foreground
 };
 
 
@@ -32,6 +32,8 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1 },
 	{ "Dwb", 			NULL,				NULL,				1 << 1,				False,			 -1 },
+	{ "Vmware", 	NULL,				NULL,				1 << 2,				False,			 -1 },
+};
 };
 
 /* layout(s) */
@@ -62,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
